@@ -1,0 +1,176 @@
+body
+	background-color: #fff
+	font-family: 'Source Sans Pro', sans-serif
+	font-size: 16px
+	
+.main
+	background: #333
+	color: #fff
+	padding: 40px 60px 60px
+
+.main_title
+	margin-bottom: 2em
+	span
+		font-size: 15px
+		font-weight: 500
+
+h1
+	font-weight: 900
+	font-size: 25px
+	margin-bottom: 1em
+
+nav
+	height: 100%
+	display: flex
+	align-items: flex-start
+	margin-top: 150px
+	width: calc(100% + 30px)
+	position: relative
+	ul
+		list-style: none
+		padding: 0
+		//position: fixed
+		width: 100%
+
+		li
+			line-height: 3em
+			position: relative
+
+			&.active
+				font-weight: 900
+				&:after
+					content: ""
+					position: absolute
+					right: 0
+					top: 50%
+					border: 12px solid transparent
+					border-top: 12px solid #333
+					transform: rotate(90deg)
+					margin-top: -12px
+				a
+					border-bottom: 2px solid #187ECF
+
+
+			a
+				color: #000
+				padding-bottom: .2em
+				position: relative
+				&:hover
+					color: #000
+					text-decoration: none
+					border-bottom: 2px solid #187ECF
+
+
+.item-chat
+	display: flex
+	align-items: flex-end
+	margin-top: 29px
+
+	&.bot
+		justify-content: flex-start
+
+	&.user
+		justify-content: flex-end
+
+.avatar
+	width: 48px
+	height: 48px
+	background: #fff
+	border-radius: 50%
+	margin-bottom: -36px
+
+	&.avatar-bot
+		margin-right: 30px
+
+	&.avatar-user
+		margin-left: 30px
+
+	a
+		display: block
+		padding: 5px
+		width: 100%
+		height: 100%
+		text-align: center
+
+		img
+			position: relative
+			height: 100%
+			
+.message
+	width: 244px
+	font-weight: 500
+	font-size: 12px
+	padding: 6px 26px 7px 16px
+	border-radius: 15px
+	position: relative
+
+	.processing
+		position: absolute
+		left: 255px
+		display: flex
+		top: 0
+		width: 299px
+		.processing_dot
+			display: flex
+			span
+				width: 5px
+				height: 5px
+				margin-right: 15px
+				background: #fff
+				border-radius: 50%
+				&:last-child
+					backgroundssh : #888
+					position: relative
+					span
+						width: 8px
+						height: 8px
+						background: #000
+						
+
+
+	.text_message
+		min-height: 30px
+		display: flex
+		align-items: center
+
+	&.message-bot
+		background: #f0f0f0
+		color: #000
+
+		.triangle
+			position: absolute
+			left: 0
+			bottom: 0
+			width: 10px
+			height: 10px
+			transform: rotate(45deg)
+
+			&:after
+				content: ""
+				position: absolute
+				//background: #000
+				left: -4px
+				bottom: -17px
+				border: 9px solid transparent
+				border-top: 16px solid #f0f0f0
+
+	&.message-user
+		background: linear-gradient(to bottom, #187ECF 0%,#4EA7EC 99%)
+		color: #fff
+
+		.triangle
+			position: absolute
+			right: 0
+			bottom: 0
+			width: 10px
+			height: 10px
+			transform: rotate(-45deg)
+
+			&:after
+				content: ""
+				position: absolute
+				//background: #000
+				left: -4px
+				bottom: -17px
+				border: 9px solid transparent
+				border-top: 16px solid #4EA7EC

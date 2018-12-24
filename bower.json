@@ -1,0 +1,14 @@
+{
+  "name": "tst",
+  "description": "for test",
+  "main": "index.js",
+  "authors": [
+    "gridnev"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "^4.2.1"
+  }
+}
