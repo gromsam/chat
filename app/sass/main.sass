@@ -2,6 +2,17 @@ body
 	background-color: #fff
 	font-family: 'Source Sans Pro', sans-serif
 	font-size: 16px
+
+button
+	background: #4ea7ec
+	border: none
+	color: #fff
+	padding: .5em 2em
+	font-size: 1.4em
+
+.vh100
+	height: 100vh
+
 	
 .main
 	background: #333
@@ -23,7 +34,7 @@ nav
 	height: 100%
 	display: flex
 	align-items: flex-start
-	margin-top: 150px
+	padding-top: 150px
 	width: calc(100% + 30px)
 	position: relative
 	ul
@@ -64,7 +75,13 @@ nav
 .communication
 	background-image: url(../img/dot_fon.svg)
 	background-repeat: repeat-y
-	background-position: center
+	background-position: center top
+	background-size: cover
+	min-height: 445px
+	&.startCommunication
+		display: flex
+		align-items: center
+		justify-content: center
 
 
 .item-chat
@@ -119,19 +136,51 @@ nav
 
 		.processing_dot
 			display: flex
+
 			span
 				width: 5px
 				height: 5px
-				margin-right: 15px
+				margin-right: 20px
 				background: #fff
 				border-radius: 50%
-				&:last-child
-					backgroundssh : #888
+
+				&.checked_span
+					background: #5f5f5f
 					position: relative
-					span
-						width: 8px
-						height: 8px
-						background: #000
+					width: 13px
+					height: 13px
+					left: -1px
+					top: -4px
+					box-shadow: inset 0 0 0 4px #fff
+					z-index: 1
+					transform-style: preserve-3d;
+
+					&::after
+						width: 27px
+						height: 27px
+						background: rgba(255, 255, 255, .5)
+						position: absolute
+						z-index: -1
+						left: -7px
+						top: -7px
+						content: ""
+						border-radius: 50%
+						transform: translateZ(-1px)
+						box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.17)
+
+					//&:after
+					//	width: 23px
+					//	height: 23px
+					//	background: #ccc
+					//	position: absolute
+					//	z-index: 1
+					//	opacity: 0.8
+					//	left: -4px
+					//	top: -4px
+					//	content: ""
+					//	border-radius: 50%
+					//	box-shadow: 0 0 12px #fff
+					//	opacity: .3
 
 		.text_processing
 			font-family: 'Jura', sans-serif
@@ -187,3 +236,68 @@ nav
 				bottom: -17px
 				border: 9px solid transparent
 				border-top: 16px solid #4EA7EC
+
+
+@media screen and (max-width: 991px)
+
+	body
+		background: #333
+
+	body.vh100
+		height: auto
+
+	.main
+		padding: 0
+		&.vh100
+			height: auto
+
+	nav
+		margin-top: 0
+		background: #333
+		width: 100%
+
+		&.nav
+			padding: 1em 0
+			display: block
+			width: 100%
+
+		ul
+			white-space: nowrap
+			overflow-x: hidden;
+			overflow-y: hidden;
+			li
+				display: inline-block
+				margin-left: 0
+				margin-right: 1em
+				a
+					color: #fff
+					&:hover
+						color: #fff
+
+	nav ul li.active:after
+		display: none
+
+	.communication
+		background: none
+
+@media screen and (max-width: 767px)
+	.avatar
+		margin-bottom: -15px
+
+	.container
+		width: 100%
+		padding-right: 15px
+		padding-left: 15px
+		margin-right: auto
+		margin-left: auto
+		.row
+			margin: 0
+
+	.avatar.avatar-bot
+		margin-right: 15px
+	.avatar.avatar-user
+		margin-left: 15px
+	.avatar
+		width: 42px
+		height: 42px
+
